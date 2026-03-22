@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: surubox
+    runtime: python
+    repo: https://github.com/yourusername/surubox
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
